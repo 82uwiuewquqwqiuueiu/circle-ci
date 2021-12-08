@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "fc7a3470-0791-4b1a-a6cd-d2199e365135",
+		"name": "Chapter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "App",
+			"item": [
+				{
+					"name": "Post",
+					"item": [
+						{
+							"name": "Signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"country_code\":\"91\",\n   \"phone_number\":\"9140948309\",\n   \"full_name\":\"Shahrukh Khan\",\n   \"email\":\"ad.khan@test.com\",\n   \"password\":\"123456\"   \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://3.109.174.172:3000/api/app/auth/signup",
+									"protocol": "http",
+									"host": [
+										"3",
+										"109",
+										"174",
+										"172"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"app",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify otp",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"_id\":\"61adb4b179ef8e58aaafdfdb\",\n    \"otp_code\":\"9479\"  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/app/auth/verify-otp",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"app",
+										"auth",
+										"verify-otp"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Put",
+					"item": [
+						{
+							"name": "Update Profile",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFkYjRiMTc5ZWY4ZTU4YWFhZmRmZGIiLCJpYXQiOjE2Mzg3OTUxODIsImV4cCI6NjA2NDM4Nzk1MTgyfQ.XxTkrG9aNnOmPrBx_V0ilK4YTFLgBN0yVMOwog1nKGo",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/app/auth/update-profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"app",
+										"auth",
+										"update-profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFkYjRiMTc5ZWY4ZTU4YWFhZmRmZGIiLCJpYXQiOjE2Mzg3ODM0NjQsImV4cCI6NjA2NDM4NzgzNDY0fQ.GtTDy3fcCDT4trTqAQWfdf3Ak8-pjo1bOLaXEeOUGkY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.get(\"variable_key\");",
+					"pm.environment.get(\"server\");",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:3000/api/"
+		},
+		{
+			"key": "server",
+			"value": "http://3.109.174.172:3000/api/"
+		}
+	]
+}
